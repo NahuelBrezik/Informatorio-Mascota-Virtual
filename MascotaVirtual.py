@@ -28,6 +28,7 @@ class MascotaVirtual:
             print(self.nombre, "le gustó mucho su comida y está lista para seguir")
 
 
+
     def jugar(self):
         
         if self.hambre > 70:
@@ -53,16 +54,16 @@ class MascotaVirtual:
         # nivel de felicidad de la mascota.
         if self.felicidad >= 70:
             print(self.nombre, "esta contenta y lista para seguir")
-            if self.felicidad >= 30:
-                print(self.nombre, "está aburrida")
+        elif self.felicidad >= 30:
+            print(self.nombre, "está aburrida")
         else:
             print(self.nombre, "está muy triste, deberían jugar un rato")
 
         #nivel de hambre de la mascota.
         if self.hambre <= 30:
             print(self.nombre, "Está satisfecha")
-            if self.hambre > 60:
-                print(self.nombre, "está hambrienta, debería comer algo")
+        elif self.hambre > 60:
+            print(self.nombre, "está hambrienta, debería comer algo")
         else:
             print(self.nombre, "Tiene mucho hambre")
 
@@ -79,7 +80,7 @@ class MascotaVirtual:
 
     
 interfaz_inicio = "\n╔════════════════════════════════════╗\n║       Bienvenido a tu primer       ║\n║          mascota virtual!          ║\n╚════════════════════════════════════╝\n"
-interfaz_juego = "\n╔════════════════════════════════════╗\n║       Opciones disponibles:        ║\n║                                    ║\n║ 1 - Alimentar            ║\n║ 4 - Salir                          ║\n║                                    ║\n╚════════════════════════════════════╝\n"
+interfaz_juego = "\n╔════════════════════════════════════╗\n║       Opciones disponibles:        ║\n║                                    ║\n║ 1 - Alimentar                      ║\n║ 2 - Jugar                          ║\n║ 3 - Estado de Ánimo                ║\n║ 4 - Salir                          ║\n╚════════════════════════════════════╝\n"
 
 print(interfaz_inicio)
 
@@ -92,6 +93,10 @@ while True:
     opcion = int(input("Elija una opción: "))
     if opcion == 1:
         mascota.alimentar()
+    elif opcion == 2:
+        mascota.jugar()
+    elif opcion == 3:
+        mascota.estado_animo()
     elif opcion == 4:
         mascota.despedida()
         break
